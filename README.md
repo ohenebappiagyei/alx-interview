@@ -7,7 +7,7 @@ This Python script generates Pascal's triangle up to a specified number of rows.
 ### Prerequisites
 
 - Python 3.6 or later
-- pip (Python package manager)
+- pip333 (Python package manager)
 
 ### Installation
 
