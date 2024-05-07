@@ -1,3 +1,14 @@
+# Minimum Operations
+
+This project provides a Python function to calculate the minimum number of operations needed to achieve a desired number of characters in a text file using only 'Copy All' and 'Paste' operations.
+
+## Installation
+
+No installation is required. Simply include the `minOperations` function in your Python script and call it with the desired number of characters as the argument.
+
+## Usage
+
+```python
 def minOperations(n):
     """
     Calculate the minimum number of operations needed to achieve exactly n H characters 
@@ -10,9 +21,8 @@ def minOperations(n):
         int: The minimum number of operations needed. If achieving n H characters is
              impossible, returns 0.
     """
-    # If n is 1 or less, it's not possible to achieve, return 0
     if n <= 1:
-        return n
+        return 0
     
     # Initialize an array to store the minimum operations for each number of characters
     dp = [0] * (n + 1)
@@ -24,5 +34,12 @@ def minOperations(n):
             if i % j == 0:
                 # If it does, it means we can copy the characters formed in j operations
                 dp[i] = min(dp[i], dp[j] + i // j)
-        
+    
     return dp[n] if dp[n] != float('inf') else 0
+
+# Example usage:
+n = 4
+print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
+
+n = 12
+print("Min # of operations to reach {} char: {}".format(n, minOperations(n)))
