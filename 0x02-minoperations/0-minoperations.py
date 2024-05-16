@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+0-minoperations
+"""
+
+
 def minOperations(n):
     """
     Calculate the minimum number of operations needed to achieve exactly n H characters 
