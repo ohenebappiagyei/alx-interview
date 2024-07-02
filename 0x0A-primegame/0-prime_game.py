@@ -5,10 +5,11 @@ def generate_primes(n):
     sieve[0] = sieve[1] = False  # 0 and 1 are not primes
     for start in range(2, int(n**0.5) + 1):
         if sieve[start]:
-            for i in range(start*start, n + 1, start):
+            for i in range(start * start, n + 1, start):
                 sieve[i] = False
     primes = [num for num, is_prime in enumerate(sieve) if is_prime]
     return primes
+
 
 def isWinner(x, nums):
     if not nums or x < 1:
@@ -16,7 +17,7 @@ def isWinner(x, nums):
 
     max_n = max(nums)
     primes = generate_primes(max_n)
-    
+
     maria_wins = 0
     ben_wins = 0
 
